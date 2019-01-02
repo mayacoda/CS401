@@ -3,6 +3,7 @@
 public enum GAMES
 {
     STACK,
+    ZIG_ZAG
 }
 
 public class SaveLoad
