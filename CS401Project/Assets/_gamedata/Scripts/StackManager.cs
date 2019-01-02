@@ -59,6 +59,11 @@ public class StackManager : MonoBehaviour
 
     void Start()
     {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Screen.orientation = ScreenOrientation.Portrait;
+        }
+
         _isGameOver = false;
         
         stackBounds = new Vector2(BOUNDS_SIZE, BOUNDS_SIZE);
