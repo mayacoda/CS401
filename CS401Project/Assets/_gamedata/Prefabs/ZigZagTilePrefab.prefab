@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 23000011173285648}
   - component: {fileID: 65000013454244400}
   m_Layer: 0
-  m_Name: ZigZagTile
+  m_Name: ZigZagTilePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
