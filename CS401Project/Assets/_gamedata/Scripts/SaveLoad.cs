@@ -5,7 +5,8 @@ public enum GAMES
     STACK,
     ZIG_ZAG,
     FLAPPY_BIRD,
-    YAMB
+    YAMB,
+    SUDOKU
 }
 
 public class SaveLoad
