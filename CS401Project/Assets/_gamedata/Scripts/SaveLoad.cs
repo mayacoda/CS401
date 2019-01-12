@@ -1,13 +1,5 @@
 ﻿using UnityEngine;
-
-public enum GAMES
-{
-    STACK,
-    ZIG_ZAG,
-    FLAPPY_BIRD,
-    YAMB,
-    SUDOKU
-}
+using static GlobalVariables;
 
 public class SaveLoad
 {
@@ -15,7 +7,7 @@ public class SaveLoad
     public static int get(GAMES game, string additionalParameter, bool isUpperBetter)
     {
 
-        string dodatakChanger = additionalParameter == null ? "" : additionalParameter;
+        string dodatakChanger = additionalParameter == null ? string.Empty : additionalParameter;
 
         if (PlayerPrefs.HasKey(game.ToString() + dodatakChanger))
             return PlayerPrefs.GetInt(game.ToString() + dodatakChanger);

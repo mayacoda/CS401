@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using static GlobalVariables;
 
 public class ZigZagManager : MonoBehaviour
 {

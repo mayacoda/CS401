@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_gamedata/Scenes/_MainMenu.unity
+    guid: 0e043ae785ad35341a60148c407a70a9
+  - enabled: 1
+    path: Assets/_gamedata/Scenes/FlappyBirdGame.unity
+    guid: 1d26619e2f9c5bc4cb752c8c4cc6d1b2
+  - enabled: 1
+    path: Assets/_gamedata/Scenes/StackGame.unity
+    guid: ae75766641a5ecf4fbd92107eeb9ab2b
+  - enabled: 1
+    path: Assets/_gamedata/Scenes/SudokuGame.unity
+    guid: 9d43e63023acc374a99f408ad17393d5
+  - enabled: 1
+    path: Assets/_gamedata/Scenes/YambGame.unity
+    guid: 7f0b92cf6839f7149aab567e85e8e1c9
+  - enabled: 1
+    path: Assets/_gamedata/Scenes/ZigZagGame.unity
+    guid: 18c70da309efdc44f8ed8de8fa36b4c8
   m_configObjects: {}

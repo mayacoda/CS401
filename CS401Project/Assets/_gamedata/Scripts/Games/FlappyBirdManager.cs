@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using static GlobalVariables;
 
 public class FlappyBirdManager : MonoBehaviour
 {
@@ -58,7 +59,9 @@ public class FlappyBirdManager : MonoBehaviour
     {
         _didFlap = false;
         IsDead = false;
+
         Time.timeScale = 0;
+
         _circleCollider2D.enabled = true;
         _boxCollider2D.enabled = false;
 

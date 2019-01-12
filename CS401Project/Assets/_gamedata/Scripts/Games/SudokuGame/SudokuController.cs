@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-
+using static GlobalVariables;
 
 public class SudokuController : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class SudokuController : MonoBehaviour
 
     [SerializeField] private GameObject numpad;
     [SerializeField] private Text timer;
+    private Timer timerTimer;
 
     private Text[,] areasTexts;
 
@@ -29,9 +30,11 @@ public class SudokuController : MonoBehaviour
 
     void Start()
     {
+        timerTimer = FindObjectOfType<Timer>();
+        timerTimer.startTimer = false;
 
-        Time.timeScale = 0;
-
+        numpad.SetActive(true);
+        
         isFirstTime = true;
         isGameOver = false;
         areasTexts = new Text[9, 9];
@@ -125,7 +128,7 @@ public class SudokuController : MonoBehaviour
 
         if (isFirstTime)
         {
-            Time.timeScale = 1;
+            timerTimer.startTimer = true;
             isFirstTime = false;
         }
 
