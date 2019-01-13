@@ -4,8 +4,8 @@ public class FlappyBirdBackgroundLooper : MonoBehaviour
 {
     private const int numBGPanels = 6;
 
-    private float pipeMax = 1f;
-    private float pipeMin = 0f;
+    [SerializeField] private float pipeMax = 1f;
+    [SerializeField] private float pipeMin = 0f;
     
     void Start()
     {

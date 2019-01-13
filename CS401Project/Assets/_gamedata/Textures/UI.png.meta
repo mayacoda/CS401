@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: buttonFrame_0
     21300002: arrow
+    21300004: UI_0
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -143,6 +144,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2301d45f6fa24244bb227d305cf53a5f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74
+        width: 256
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 29, z: 34, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4965e4af56d28b41bfd24820067de6b
       vertices: []
       indices: 
       edges: []

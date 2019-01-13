@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class Numpad : MonoBehaviour
 {
-    private const int BACKindex = 9;
-    private const int EMPTYindex = 10;
-    private const int CLEARindex = 11;
+    // private const int BACKindex = 9;
+    // private const int EMPTYindex = 10;
+    private const int CLEARindex = 9;
     
     private SudokuController _sudokuController;
     
@@ -20,7 +20,7 @@ public class Numpad : MonoBehaviour
             btn.onClick.AddListener(() => ButtonPressed());
         }
 
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
 
     }
 
@@ -28,7 +28,7 @@ public class Numpad : MonoBehaviour
     {
         GameObject go = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
 
-        if (go.transform.parent.transform.GetChild(BACKindex).name == go.name)
+        /*if (go.transform.parent.transform.GetChild(BACKindex).name == go.name)
         {
 
         }
@@ -36,7 +36,14 @@ public class Numpad : MonoBehaviour
         {
             return;
         }
-        else if (go.transform.parent.transform.GetChild(CLEARindex).name == go.name)
+        else */
+
+        if(_sudokuController.CurrentButtonPressedText == null)
+        {
+            return;
+        }
+
+        if (go.transform.parent.transform.GetChild(CLEARindex).name == go.name)
         {
             _sudokuController.CurrentButtonPressedText.text = string.Empty;
         }
@@ -45,9 +52,9 @@ public class Numpad : MonoBehaviour
             _sudokuController.CurrentButtonPressedText.text = go.transform.GetChild(0).GetComponent<Text>().text;
         }
         
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
 
-        _sudokuController.enabled = true;
+        // _sudokuController.enabled = true;
 
         _sudokuController.CheckForEnd();
     }

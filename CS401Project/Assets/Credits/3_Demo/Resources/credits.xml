@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<credits>
+  <credit type="texture" data="creditsTextureExample" data2="" />
+  <credit type="space" data="2" data2="" />
+  <credit type="title" data="Credits" data2="" />
+  <credit type="space" data="1" data2="" />
+  <credit type="title" data="Main Team" data2="" />
+  <credit type="singlecolumn" data="Petar Petrovic PeraDll" data2="" />
+  <credit type="singlecolumn" data="Maya Nedeljkovich" data2="" />
+  <credit type="space" data="2" data2="" />
+  <credit type="twocolumns" data="Programmer" data2="Petar Petrovic PeraDll" />
+  <credit type="space" data="1" data2="" />
+  <credit type="twocolumns" data="Designer" data2="Maya Nedeljkovich" />
+  <credit type="space" data="1" data2="" />
+  <credit type="twocolumns" data="Testers" data2="Petar Petrovic PeraDll" />
+  <credit type="twocolumns" data="" data2="Maya Nedeljkovich" />
+  <credit type="space" data="2" data2="" />
+  <credit type="title" data="Special Thanks to" data2="" />
+  <credit type="singlecolumn" data="Everyone!" data2="" />
+  <credit type="space" data="2" data2="" />
+  <credit type="texture" data="creditsTextureExample" data2="" />
+</credits>

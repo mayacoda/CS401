@@ -13,14 +13,17 @@ public class SudokuController : MonoBehaviour
 
     private SUDOKU_DIFFICULTY currentLevel = SUDOKU_DIFFICULTY.VERY_EASY;
 
+    private Image CurrentButtonPressedImage;
+
     public Text CurrentButtonPressedText
     {
         get;
         private set;
     }
-
+    [SerializeField] private Color _pressedColor;
     [SerializeField] private GameObject numpad;
     [SerializeField] private Text timer;
+    [SerializeField] private GameObject wrongCombination;
     private Timer timerTimer;
 
     private Text[,] areasTexts;
@@ -28,13 +31,16 @@ public class SudokuController : MonoBehaviour
     private bool isGameOver;
     private bool isFirstTime;
 
+    private void Awake()
+    {
+        wrongCombination.SetActive(false);
+    }
+
     void Start()
     {
         timerTimer = FindObjectOfType<Timer>();
         timerTimer.startTimer = false;
-
-        numpad.SetActive(true);
-        
+                
         isFirstTime = true;
         isGameOver = false;
         areasTexts = new Text[9, 9];
@@ -138,19 +144,40 @@ public class SudokuController : MonoBehaviour
         }
 
         GameObject go = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-        
+       
+
+        if(CurrentButtonPressedImage != null)
+        {
+            CurrentButtonPressedImage.color = Color.white;
+        }
+
+        CurrentButtonPressedImage = go.GetComponent<Image>();
+        CurrentButtonPressedImage.color = _pressedColor;
+
         CurrentButtonPressedText = go.transform.GetChild(0).GetComponent<Text>();
-        enabled = false;
-        numpad.SetActive(true);
+        // enabled = false;
+        // numpad.SetActive(true);
 
     }
 
     public void CheckForEnd()
     {
-        if (!isAnyFieldEmpty() && checkHorizontal() && checkVertical() && checkSquare())
+
+        bool isAllFields = !isAnyFieldEmpty();
+
+        if(isAllFields)
         {
-            gameOver();
+            if (checkHorizontal() && checkVertical() && checkSquare())
+            {
+                gameOver();
+            }
+            else
+            {
+                wrongCombination.SetActive(true);
+            }
         }
+
+        
 
     }
     

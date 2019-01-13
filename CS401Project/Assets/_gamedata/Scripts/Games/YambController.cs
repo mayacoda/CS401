@@ -116,6 +116,11 @@ public class YambController : MonoBehaviour
                 // pressable
                 button.GetComponent<Image>().sprite = _sprites[spritePRESSABLEindex];
 
+                if(j == 0)
+                {
+                    button.GetComponentInChildren<Text>().color = Color.white;
+                }
+
                 // EMPTY CELL
                  if ((j == 0 && i == 0) || (i == NUMBER_OF_ROWS - 1 && j != NUMBER_OF_COLUMNS - 1) ||
                      (j == NUMBER_OF_COLUMNS - 1 && !(i == SUMrowIndices[0] || i == SUMrowIndices[1] || i == SUMrowIndices[2] || i == SUMrowIndices[3])))

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &126310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22439346}
+  - component: {fileID: 11404774}
+  m_Layer: 0
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &11404774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0dce4d1d4ce3e47b0833acf7d9f09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditsFile: {fileID: 4900000, guid: a0e800b68ad3f7d47a7eae149cde7294, type: 3}
+  playOnAwake: 1
+  speed: 50
+  fadeTime: 1
+  prefabSingleColumn: {fileID: 103724, guid: c689cfbbb01a64a4780b3aaa7427ef7b, type: 2}
+  prefabTwoColumns: {fileID: 155666, guid: b7549191c6ae8a448bfc4f95e10d1a0b, type: 2}
+  prefabImage: {fileID: 170712, guid: e5b973c944580314ebce7d8c66ad0784, type: 2}
+  prefabTitle: {fileID: 134916, guid: 166d3e16e46e0334d8d7c93de5ad9110, type: 2}
+  prefabEmptySpace: {fileID: 170712, guid: 796573620826dbc44861191533c80f0b, type: 2}
+--- !u!224 &22439346
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.08}
+  m_AnchorMax: {x: 1, y: 0.92}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 126310}
+  m_IsPrefabAsset: 1
