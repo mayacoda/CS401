@@ -58,8 +58,8 @@ public class SudokuController : MonoBehaviour
 
                 Text txt = square.transform.GetChild(j).GetChild(0).GetComponent<Text>();
 
-                Debug.Log(i / 3 * 3 + j / 3);
-                Debug.Log(i % 3 * 3 + j % 3);
+                // Debug.Log(i / 3 * 3 + j / 3);
+                // Debug.Log(i % 3 * 3 + j % 3);
 
                 areasTexts[i / 3 * 3 + j / 3, i % 3 * 3 + j % 3] = txt;
                 
@@ -286,15 +286,24 @@ public class SudokuController : MonoBehaviour
 
         bool isNewScore = SaveLoad.isNew(GAMES.SUDOKU, currentLevel.ToString(), time, false);
 
+        string endPanelText = string.Empty;
+
+        timer.gameObject.SetActive(false);
+        
         if (isNewScore)
         {
             SaveLoad.set(GAMES.SUDOKU, currentLevel.ToString(), time);
-            timer.text = "NEW BEST SCORE\n" + time + "\nBEST SCORE\n" + SaveLoad.get(GAMES.SUDOKU, currentLevel.ToString(), false);
+            endPanelText = "NEW BEST SCORE\n" + time + "\nBEST SCORE\n" + SaveLoad.get(GAMES.SUDOKU, currentLevel.ToString(), false);
         }
         else
-            timer.text = "YOUR SCORE\n" + time + "\nBEST SCORE\n" + SaveLoad.get(GAMES.SUDOKU, currentLevel.ToString(), false);
+            endPanelText = "YOUR SCORE\n" + time + "\nBEST SCORE\n" + SaveLoad.get(GAMES.SUDOKU, currentLevel.ToString(), false);
+
+        timer.text = endPanelText;
+
+        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
 
         enabled = false;
+
 
     }
 

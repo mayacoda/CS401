@@ -630,17 +630,26 @@ public class YambController : MonoBehaviour
 
         buttonsArray[SUMrowIndices[3], NUMBER_OF_COLUMNS - 1].transform.GetChild(0).GetComponent<Text>().text = finalSum.ToString();
 
+        string endPanelText = string.Empty;
+
+        scoreText.gameObject.SetActive(false);
+
+
         if (SaveLoad.isNew(GAMES.YAMB, null, finalSum, true))
         {
             SaveLoad.set(GAMES.YAMB, null, finalSum);
-            scoreText.text = "New high score\n " + finalSum + "\nBest score\n " + SaveLoad.get(GAMES.YAMB, null, true);
+            endPanelText = "New high score\n " + finalSum + "\nBest score\n " + SaveLoad.get(GAMES.YAMB, null, true);
 
         }
         else
-            scoreText.text = "Current score\n " + finalSum + "\nBest score\n " + SaveLoad.get(GAMES.YAMB, null, true);
+            endPanelText = "Current score\n " + finalSum + "\nBest score\n " + SaveLoad.get(GAMES.YAMB, null, true);
 
-        scoreText.gameObject.SetActive(true);
+        scoreText.text = endPanelText;
 
+        // scoreText.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(false);
+
+        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
     }
     
 }

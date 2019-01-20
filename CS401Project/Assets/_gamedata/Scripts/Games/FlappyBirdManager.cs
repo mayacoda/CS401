@@ -188,13 +188,22 @@ public class FlappyBirdManager : MonoBehaviour
         _circleCollider2D.enabled = false;
         _boxCollider2D.enabled = true;
 
+        scoreText.gameObject.SetActive(false);
+
+        string endPanelText = string.Empty;
+
         if (SaveLoad.isNew(GAMES.FLAPPY_BIRD, null, _score, true))
         {
             SaveLoad.set(GAMES.FLAPPY_BIRD, null, _score);
-            scoreText.text = "New high score: " + _score + "\nBest score:  " + SaveLoad.get(GAMES.FLAPPY_BIRD, null, true);
+            endPanelText = "New high score:\n" + _score + "\nBest score:\n" + SaveLoad.get(GAMES.FLAPPY_BIRD, null, true);
 
         }
         else
-            scoreText.text = "Current score: " + _score + "\nBest score:  " + SaveLoad.get(GAMES.FLAPPY_BIRD, null, true);
+            endPanelText = "Current score: " + _score + "\nBest score:  " + SaveLoad.get(GAMES.FLAPPY_BIRD, null, true);
+
+        scoreText.text = endPanelText;
+
+        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+
     }
 }

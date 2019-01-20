@@ -22,7 +22,7 @@ public class ZigZagManager : MonoBehaviour
     [SerializeField] private GameObject tileParent;
 
     private Vector3 _dir;
-    
+
     private float _speed;
     private int _score;
     private bool _isDead;
@@ -45,14 +45,14 @@ public class ZigZagManager : MonoBehaviour
         {
             GameObject tile = Instantiate(tilePrefab,
                 tileParent.transform.GetChild(tileParent.transform.childCount - 1).transform.GetChild(Random.Range(0, 2)).position, // take last child, and take random attach point
-                Quaternion.identity, tileParent.transform) ;
+                Quaternion.identity, tileParent.transform);
 
             // ACTIVATE DIAMOND (20% chance)
             if (Random.Range(0, 5) == 0)
             {
                 tile.transform.GetChild(3).gameObject.SetActive(true);
             }
-                
+
         }
     }
 
@@ -206,17 +206,27 @@ public class ZigZagManager : MonoBehaviour
     {
         _isDead = true;
 
+        string endPanelText = string.Empty;
+
+        scoreText.gameObject.SetActive(false);
+
+
         if (SaveLoad.isNew(GAMES.ZIG_ZAG, null, _score, true))
         {
             SaveLoad.set(GAMES.ZIG_ZAG, null, _score);
-            scoreText.text = "New high score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
+            endPanelText = "New high score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
             StartCoroutine(destroyEffect((GameObject)Instantiate(_newScoreEffect)));
 
         }
         else
-            scoreText.text = "Current score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
+            endPanelText = "Current score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
+
+        scoreText.text = endPanelText;
 
         scoreText.transform.SetSiblingIndex(30);
+
+        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+
 
     }
 

@@ -297,15 +297,23 @@ public class StackManager : MonoBehaviour
 
         bool isNewScore = SaveLoad.isNew(GAMES.STACK, null, _currentScore, true);
 
+        string endPanelText = string.Empty;
+
+        scoreText.gameObject.SetActive(false);
+        
         if (isNewScore)
         {
             SaveLoad.set(GAMES.STACK, null, _currentScore);
-            scoreText.text = "NEW BEST SCORE\n" + _currentScore + "\nBEST SCORE\n" + SaveLoad.get(GAMES.STACK, null, true);
+            endPanelText = "NEW BEST SCORE\n" + _currentScore + "\nBEST SCORE\n" + SaveLoad.get(GAMES.STACK, null, true);
             StartCoroutine(destroyEffect((GameObject)Instantiate(_newScoreEffect)));
         }
         else
-            scoreText.text = "YOUR SCORE\n" + _currentScore + "\nBEST SCORE\n" + SaveLoad.get(GAMES.STACK, null, true);
-        
+            endPanelText = "YOUR SCORE\n" + _currentScore + "\nBEST SCORE\n" + SaveLoad.get(GAMES.STACK, null, true);
+
+        scoreText.text = endPanelText;
+
+        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+
     }
 
     private void ColorMesh(Mesh mesh)
