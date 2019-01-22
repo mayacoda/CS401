@@ -275,6 +275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasEndPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 55608577365569548, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 55608577365569544, guid: 663989099a81d48469103371f650b956,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,11 +385,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 55608575889251643, guid: 663989099a81d48469103371f650b956,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
         type: 3}
       propertyPath: m_Sprite
@@ -405,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251643, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663989099a81d48469103371f650b956, type: 3}
@@ -1137,6 +1142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853738819257126694, guid: bef428c426b2e324ca8425721deb9958,
+        type: 3}
+      propertyPath: m_Text
+      value: zig zag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef428c426b2e324ca8425721deb9958, type: 3}
