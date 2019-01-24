@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312013, g: 0.3807403, b: 0.35872707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1122,6 +1122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718666341546680, guid: bef428c426b2e324ca8425721deb9958, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224441524348035874, guid: bef428c426b2e324ca8425721deb9958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1241,6 +1245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853738819257126694, guid: bef428c426b2e324ca8425721deb9958,
+        type: 3}
+      propertyPath: m_Text
+      value: flappy bird
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef428c426b2e324ca8425721deb9958, type: 3}
@@ -5588,6 +5597,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasEndPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 55608577365569548, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 55608577365569544, guid: 663989099a81d48469103371f650b956,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5692,6 +5706,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd7964356febc4fc2980909750be4d64,
+        type: 3}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5726722
+      objectReference: {fileID: 0}
+    - target: {fileID: 55608575889251641, guid: 663989099a81d48469103371f650b956,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.22745097
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663989099a81d48469103371f650b956, type: 3}

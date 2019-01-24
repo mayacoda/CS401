@@ -50,6 +50,7 @@ public class Numpad : MonoBehaviour
         else
         {
             _sudokuController.CurrentButtonPressedText.text = go.transform.GetChild(0).GetComponent<Text>().text;
+            _sudokuController.CurrentButtonPressedText.color = new Color(0.64f, 0.31f, 0.81f);
         }
         
         // gameObject.SetActive(false);

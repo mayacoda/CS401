@@ -148,7 +148,7 @@ public class SudokuController : MonoBehaviour
 
         if(CurrentButtonPressedImage != null)
         {
-            CurrentButtonPressedImage.color = Color.white;
+            CurrentButtonPressedImage.color = new Color(0.875445f, 0.9323218f, 0.9716981f, 0.9215686f);
         }
 
         CurrentButtonPressedImage = go.GetComponent<Image>();
