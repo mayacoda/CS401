@@ -13,7 +13,9 @@ public class CustomSceneManager : MonoBehaviour
     
     public void ChangeScene(int index)
     {
-        SoundManager.instance.PlaySingle(AUDIO.BUTTON_PRESS);
+        if(SoundManager.instance != null)
+            SoundManager.instance.PlaySingle(AUDIO.BUTTON_PRESS);
+
         SceneManager.LoadScene(index);
     }
 

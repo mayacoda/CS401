@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11808661, g: 0.15422982, b: 0.117171295, a: 1}
+  m_IndirectSpecularColor: {r: 0.119149886, g: 0.15470845, b: 0.1182419, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1147,6 +1147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: zig zag
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853738819257126694, guid: bef428c426b2e324ca8425721deb9958,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef428c426b2e324ca8425721deb9958, type: 3}

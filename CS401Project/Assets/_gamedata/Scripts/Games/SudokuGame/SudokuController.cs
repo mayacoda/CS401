@@ -40,7 +40,7 @@ public class SudokuController : MonoBehaviour
     {
         timerTimer = FindObjectOfType<Timer>();
         timerTimer.startTimer = false;
-                
+
         isFirstTime = true;
         isGameOver = false;
         areasTexts = new Text[9, 9];
@@ -62,7 +62,7 @@ public class SudokuController : MonoBehaviour
                 // Debug.Log(i % 3 * 3 + j % 3);
 
                 areasTexts[i / 3 * 3 + j / 3, i % 3 * 3 + j % 3] = txt;
-                
+
 
             }
         }
@@ -77,7 +77,7 @@ public class SudokuController : MonoBehaviour
 
         string stringOfCurrentLevel = LoadFromFile("SudokuLevels/" + currentLevel.ToString());
 
-        Debug.Log(stringOfCurrentLevel);
+        // Debug.Log(stringOfCurrentLevel);
 
         for (int i = 0; i < 81; i++)
         {
@@ -128,6 +128,16 @@ public class SudokuController : MonoBehaviour
 
     }
 
+    /*private void Update()
+    {
+
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+           gameOver();
+       }
+       
+    }*/
+
 
     public void ButtonPressed()
     {
@@ -144,9 +154,9 @@ public class SudokuController : MonoBehaviour
         }
 
         GameObject go = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-       
 
-        if(CurrentButtonPressedImage != null)
+
+        if (CurrentButtonPressedImage != null)
         {
             CurrentButtonPressedImage.color = new Color(0.875445f, 0.9323218f, 0.9716981f, 0.9215686f);
         }
@@ -165,7 +175,7 @@ public class SudokuController : MonoBehaviour
 
         bool isAllFields = !isAnyFieldEmpty();
 
-        if(isAllFields)
+        if (isAllFields)
         {
             if (checkHorizontal() && checkVertical() && checkSquare())
             {
@@ -177,10 +187,10 @@ public class SudokuController : MonoBehaviour
             }
         }
 
-        
+
 
     }
-    
+
     private bool isAnyFieldEmpty()
     {
         for (int x = 0; x < areasTexts.GetLength(0); ++x)
@@ -195,7 +205,7 @@ public class SudokuController : MonoBehaviour
         }
         return false;
     }
-    
+
     private bool checkHorizontal()
     {
         HashSet<int> values = new HashSet<int>();
@@ -208,7 +218,7 @@ public class SudokuController : MonoBehaviour
             {
                 int num = int.Parse(areasTexts[x, y].text);
 
-                if(values.Add(num) == false)
+                if (values.Add(num) == false)
                 {
                     return false;
                 }
@@ -217,7 +227,7 @@ public class SudokuController : MonoBehaviour
 
         return true;
     }
-    
+
     private bool checkVertical()
     {
         HashSet<int> values = new HashSet<int>();
@@ -239,7 +249,7 @@ public class SudokuController : MonoBehaviour
 
         return true;
     }
-    
+
     private bool checkSquare()
     {
 
@@ -271,7 +281,7 @@ public class SudokuController : MonoBehaviour
                     values.Clear();
             }
         }
-        
+
         return true;
     }
 
@@ -289,7 +299,7 @@ public class SudokuController : MonoBehaviour
         string endPanelText = string.Empty;
 
         timer.gameObject.SetActive(false);
-        
+
         if (isNewScore)
         {
             SaveLoad.set(GAMES.SUDOKU, currentLevel.ToString(), time);

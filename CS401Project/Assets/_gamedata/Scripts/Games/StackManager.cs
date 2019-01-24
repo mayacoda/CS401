@@ -13,10 +13,10 @@ public class StackManager : MonoBehaviour
 
     // start speed
     private const float STACK_MOVING_SPEED = 5.0f;
-    
+
     // how much we want to extend cube of combo
     private const float STACK_BOUND_GAIN = 0.25f;
-    
+
     // speed gain on combo
     private const float SPEED_GAIN = 1.05f;
 
@@ -40,7 +40,7 @@ public class StackManager : MonoBehaviour
     [SerializeField] private Color32[] gameColors = new Color32[4];
 
     [SerializeField] private Material stackMat;
-    
+
     private GameObject[] theStack;
     private Vector2 stackBounds;
 
@@ -66,7 +66,7 @@ public class StackManager : MonoBehaviour
         }
 
         _isGameOver = false;
-        
+
         stackBounds = new Vector2(BOUNDS_SIZE, BOUNDS_SIZE);
 
         theStack = new GameObject[transform.childCount];
@@ -87,7 +87,7 @@ public class StackManager : MonoBehaviour
         {
             return;
         }
-            
+
         if (Input.GetMouseButtonDown(0))
         {
             if (PlaceTile())
@@ -131,7 +131,7 @@ public class StackManager : MonoBehaviour
         {
             _stackIndex = theStack.Length - 1;
         }
-            
+
         desiredStackPosition = Vector3.down * _currentScore;
         theStack[_stackIndex].transform.localPosition = new Vector3(_isMovingOnX ? FAR_TO_GO : 0f, _currentScore, !_isMovingOnX ? FAR_TO_GO : 0f);
         theStack[_stackIndex].transform.localScale = new Vector3(stackBounds.x, 1, stackBounds.y);
@@ -153,7 +153,7 @@ public class StackManager : MonoBehaviour
 
         }
         else
-        { 
+        {
             theStack[_stackIndex].transform.localPosition = new Vector3(secondaryPosition, _currentScore, Mathf.Sin(tileTransition) * FAR_TO_GO);
         }
     }
@@ -165,7 +165,7 @@ public class StackManager : MonoBehaviour
         if (_isMovingOnX)
         {
             float deltaX = lastTilePosition.x - currentTranform.position.x;
-            
+
             // check if position is centered
             if (Mathf.Abs(deltaX) > ERROR_MARGIN)
             {
@@ -295,12 +295,19 @@ public class StackManager : MonoBehaviour
         _isGameOver = true;
         theStack[_stackIndex].AddComponent<Rigidbody>();
 
+        StartCoroutine(endPanel());
+    }
+
+    private IEnumerator endPanel()
+    {
+        yield return new WaitForSeconds(2f);
+        
         bool isNewScore = SaveLoad.isNew(GAMES.STACK, null, _currentScore, true);
 
         string endPanelText = string.Empty;
 
         scoreText.gameObject.SetActive(false);
-        
+
         if (isNewScore)
         {
             SaveLoad.set(GAMES.STACK, null, _currentScore);

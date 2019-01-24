@@ -104,6 +104,8 @@ public class YambController : MonoBehaviour
                 // SVAKO DUGME IMA TAG Touchable koji mi menjamo kada nije touchable
                 Button button = Instantiate(_btnPrefab, this.transform, false) as Button;
 
+                button.transform.GetChild(0).GetComponent<Text>().color = Color.black;
+
                 // important for knowing which row and column we are
                 button.name = i + "-" + j;
 
@@ -146,16 +148,24 @@ public class YambController : MonoBehaviour
         for (int i = 1; i < 7; i++)
         {
             buttonsArray[i, 0].transform.GetChild(0).GetComponent<Text>().text = i.ToString();
+            buttonsArray[i, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         }
 
         buttonsArray[MAXindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Max";
+        buttonsArray[MAXindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[MINindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Min";
+        buttonsArray[MINindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[KENTAindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Kenta";
+        buttonsArray[KENTAindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[TRILINGindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Triling";
+        buttonsArray[TRILINGindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[FULLHOUSEindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Ful";
+        buttonsArray[FULLHOUSEindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[POKERindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Poker";
+        buttonsArray[POKERindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
         buttonsArray[YAMBindex, 0].transform.GetChild(0).GetComponent<Text>().text = "Yamb";
-        
+        buttonsArray[YAMBindex, 0].transform.GetChild(0).GetComponent<Text>().color = Color.white;
+
         for (int i = 0; i < SUMrowIndices.Length; i++)
         {
             buttonsArray[SUMrowIndices[i], 0].GetComponent<Image>().sprite = _sprites[spriteSUMindex];

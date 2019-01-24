@@ -183,7 +183,7 @@ public class FlappyBirdManager : MonoBehaviour
 
     IEnumerator delayEnd()
     {
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(1f);
 
         _circleCollider2D.enabled = false;
         _boxCollider2D.enabled = true;

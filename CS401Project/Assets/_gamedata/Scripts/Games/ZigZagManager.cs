@@ -206,28 +206,33 @@ public class ZigZagManager : MonoBehaviour
     {
         _isDead = true;
 
+        StartCoroutine(endPanel());
+        
+    }
+
+    private IEnumerator endPanel()
+    {
+        yield return new WaitForSeconds(.6f);
+
         string endPanelText = string.Empty;
 
         scoreText.gameObject.SetActive(false);
 
-
         if (SaveLoad.isNew(GAMES.ZIG_ZAG, null, _score, true))
         {
             SaveLoad.set(GAMES.ZIG_ZAG, null, _score);
-            endPanelText = "New high score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
+            endPanelText = "New high score\n " + _score + "\nBest score\n" + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
             StartCoroutine(destroyEffect((GameObject)Instantiate(_newScoreEffect)));
 
         }
         else
-            endPanelText = "Current score\n " + _score + "\nBest score\n  " + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
+            endPanelText = "Current score\n " + _score + "\nBest score\n" + SaveLoad.get(GAMES.ZIG_ZAG, null, true);
 
         scoreText.text = endPanelText;
 
         scoreText.transform.SetSiblingIndex(30);
 
         FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
-
-
     }
 
     private IEnumerator destroyEffect(GameObject effect)
