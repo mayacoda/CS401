@@ -203,7 +203,7 @@ public class FlappyBirdManager : MonoBehaviour
 
         scoreText.text = endPanelText;
 
-        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+        FindObjectOfType<EndPanel>().ShowEndPanel(_score, SaveLoad.get(GAMES.FLAPPY_BIRD, null, true));
 
     }
 }

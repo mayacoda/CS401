@@ -160,7 +160,7 @@ public class ZigZagManager : MonoBehaviour
     private void IncreaseScore(int value)
     {
         _score += value;
-        scoreText.text = "Score: " + _score;
+        scoreText.text = _score.ToString();
     }
 
     private IEnumerator showAndDestroyEffect(GameObject effect)
@@ -232,7 +232,7 @@ public class ZigZagManager : MonoBehaviour
 
         scoreText.transform.SetSiblingIndex(30);
 
-        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+        FindObjectOfType<EndPanel>().ShowEndPanel(_score, SaveLoad.get(GAMES.ZIG_ZAG, null, true));
     }
 
     private IEnumerator destroyEffect(GameObject effect)

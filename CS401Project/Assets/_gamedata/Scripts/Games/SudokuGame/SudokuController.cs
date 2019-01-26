@@ -310,7 +310,7 @@ public class SudokuController : MonoBehaviour
 
         timer.text = endPanelText;
 
-        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+        FindObjectOfType<EndPanel>().ShowEndPanel(time, SaveLoad.get(GAMES.SUDOKU, currentLevel.ToString(), false));
 
         enabled = false;
 

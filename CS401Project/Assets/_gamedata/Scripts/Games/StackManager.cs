@@ -319,7 +319,7 @@ public class StackManager : MonoBehaviour
 
         scoreText.text = endPanelText;
 
-        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+        FindObjectOfType<EndPanel>().ShowEndPanel(_currentScore, SaveLoad.get(GAMES.STACK, null, true));
 
     }
 

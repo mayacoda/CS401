@@ -118,7 +118,7 @@ public class YambController : MonoBehaviour
                 // pressable
                 button.GetComponent<Image>().sprite = _sprites[spritePRESSABLEindex];
 
-                if(j == 0)
+                if(j == 0 || SUMrowIndices.Contains(i))
                 {
                     button.GetComponentInChildren<Text>().color = Color.white;
                 }
@@ -659,7 +659,7 @@ public class YambController : MonoBehaviour
         // scoreText.gameObject.SetActive(true);
         scoreText.gameObject.SetActive(false);
 
-        FindObjectOfType<EndPanel>().ShowEndPanel(endPanelText);
+        FindObjectOfType<EndPanel>().ShowEndPanel(finalSum, SaveLoad.get(GAMES.YAMB, null, true));
     }
     
 }
