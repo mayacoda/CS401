@@ -171,7 +171,7 @@ public class FlappyBirdManager : MonoBehaviour
     private void IncreaseScore(int value)
     {
         _score += value;
-        scoreText.text = "Score: " + _score;
+        scoreText.text = _score.ToString();
     }
 
     private void dead()
